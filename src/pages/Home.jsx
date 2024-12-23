@@ -13,7 +13,7 @@ const projects = [
       'MySQL',
       'PHP',
     ],
-    imageUrl: '../../public/assets/SIFEST.PNG',
+    imageUrl: '../assets/SIFEST.png',
     githubUrl: 'https://github.com/NicolausOwen/Sifest2024'
   },
 
@@ -23,7 +23,7 @@ const projects = [
     highlights: [
       'Laravel, Vue, Inertia', 
     ],
-    imageUrl: '../../public/assets/SMART_APP.PNG',
+    imageUrl: '../assets/SMART_APP.png',
     githubUrl: 'https://github.com/NicolausOwen/SMART_APP'
   }
 ];
