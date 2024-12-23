@@ -37,7 +37,7 @@ function Home() {
       <div className="font-sans sm:mx-[10vw] md:mx-[15vw] lg:mx-[25vw]">
 
         {/* HEADER*/}
-        <section className="my-[25vh] bg-white text-center p-8">
+        <section className="my-[30vh] bg-white text-center p-8">
           <h1 className="text-7xl font-bold mb-4">
             Welcome.
           </h1>
