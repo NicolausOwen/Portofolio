@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import NavBar from '../components/NavBar';
 import Projects from '../components/Projects';
 import Footer from '../components/Footer';
 
+import { gsap } from 'gsap';
+
 const projects = [
   {
     title: 'SIFEST 2024',
-    description: 'Designing customized AI chatbot solutions for seamless website experiences.',
+    description: 'Developing a responsive and user-friendly website for SI FEST, a national-scale event organized by HIMSI FASILKOM UNSRI, focused on providing insights into 5.0 technology. The website showcases event details, registration for competitions, and an interactive experience for attendees and participants.',
     highlights: [
       'Laravel',
       'SCSS/SASS',
@@ -19,9 +21,12 @@ const projects = [
 
   {
     title: 'SMART_APP',
-    description: 'Designing customized AI chatbot solutions for seamless website experiences.',
+    description: 'Developing a Website for an Internal Project, an intuitive platform designed to streamline student registration processes. The application provides an easy-to-use interface for students to register, manage their details, and track their progress, enhancing efficiency and user experience.',
     highlights: [
-      'Laravel, Vue, Inertia', 
+      'Laravel',
+      'Vue',
+      'Inertia',
+      'MySQL',
     ],
     imageUrl: '../assets/SMART_APP.png',
     githubUrl: 'https://github.com/NicolausOwen/SMART_APP'
@@ -29,6 +34,45 @@ const projects = [
 ];
 
 function Home() {
+
+  const textRef = useRef(null);
+  const descriptionRef = useRef(null);
+
+  useEffect(() => {
+    const welcomeText = textRef.current.innerText;
+    const welcomeChars = welcomeText.split('');
+    textRef.current.innerHTML = welcomeChars.map(char => `<span>${char}</span>`).join('');
+
+    // Welcome
+    gsap.fromTo(textRef.current.children, {
+      opacity: 0,
+      y: 20,
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.1,
+      stagger: 0.2, 
+      ease: 'none',
+    });
+
+    const descriptionText = descriptionRef.current.innerText;
+    const descriptionChars = descriptionText.split('');
+    descriptionRef.current.innerHTML = descriptionChars.map(char => `<span>${char}</span>`).join('');
+
+    // Description
+    gsap.fromTo(descriptionRef.current.children, {
+      opacity: 0,
+      y: 20,
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.01,
+      stagger: 0.015, 
+      ease: 'none',
+      delay: 0.1, 
+    });
+  }, []);
+
   return (
     <>
 
@@ -38,10 +82,10 @@ function Home() {
 
         {/* HEADER*/}
         <section className="my-[20vh] bg-white text-center p-8">
-          <h1 className="text-7xl font-bold mb-4">
+          <h1 ref={textRef} className="text-7xl font-bold mb-4">
             Welcome.
           </h1>
-          <p className="text-gray-600 mb-6">
+          <p ref={descriptionRef} className="text-gray-600 mb-6">
             My Name is Nicolaus Owen Marvell, I am a college student passionate about web development. I thrive on challenges and continuously improve my skills, aiming to become a professional web developer. Explore my projects to see my journey and progress. I hope to create something spectacular together!.
           </p>
           <button className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800">
@@ -103,7 +147,7 @@ function Home() {
           </div>
         </div>
 
-        <p className="my-[5vh] p-4 font-normal">Loosely designed using <a className='hover:text-indigo-500 text-gray-500' href='https://www.canva.com'>Canva</a> & <a className='hover:text-red-500 text-gray-500' href='https://www.figma.com'>Figma</a> and coded in <a className='hover:text-blue-500 text-gray-500' href='https://code.visualstudio.com'>Visual Studio</a> Code by yours truly. Built with <a className='hover:text-blue-400 text-gray-500' href='https://react.dev'>React</a> and <a className='hover:text-blue-400 text-gray-500' href='https://tailwindcss.com'>Tailwind CSS</a>, deployed with <a className='hover:text-gray-900 text-gray-500' href='https://vercel.com'>Vercel</a>.</p>
+        <p className="my-[5vh] p-4 font-normal">Loosely designed using <a className='hover:text-indigo-500 text-gray-500' href='https://www.canva.com'>Canva</a> & <a className='hover:text-red-500 text-gray-500' href='https://www.figma.com'>Figma</a> and coded by me in <a className='hover:text-blue-500 text-gray-500' href='https://code.visualstudio.com'>Visual Studio</a>. Built with <a className='hover:text-blue-400 text-gray-500' href='https://react.dev'>React</a> and <a className='hover:text-blue-400 text-gray-500' href='https://tailwindcss.com'>Tailwind CSS</a>, deployed with <a className='hover:text-gray-900 text-gray-500' href='https://vercel.com'>Vercel</a>.</p>
 
         {/* CONTACTS */}
         <div className="my-10 p-8 font-sans">

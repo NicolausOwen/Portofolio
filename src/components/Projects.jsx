@@ -15,11 +15,11 @@ function Projects({ title, description, highlights, imageUrl, githubUrl }) {
         scale: 1,
         scrollTrigger: {
           trigger: imageRef.current,
-          start: 'top bottom', // when the top of the image hits the bottom of the viewport
-          end: 'top center', // when the top of the image reaches the center of the viewport
-          scrub: true, // smooth scrubbing while scrolling
-          toggleActions: 'play none none none', // animation plays on scroll down, does nothing on scroll up
-          onLeaveBack: () => gsap.to(imageRef.current, { scale: 1 }), // reset scale when scrolling back
+          start: 'top bottom', 
+          end: 'top center', 
+          scrub: true, 
+          toggleActions: 'play none none none', 
+          onLeaveBack: () => gsap.to(imageRef.current, { scale: 1 }), 
         },
       });
   }, []);
