@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useEffect, useRef }  from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Projects({ title, description, highlights, imageUrl, githubUrl }) {
+
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(imageRef.current, 
+      { scale: 0.8 }, 
+      {
+        scale: 1,
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: 'top bottom', // when the top of the image hits the bottom of the viewport
+          end: 'top center', // when the top of the image reaches the center of the viewport
+          scrub: true, // smooth scrubbing while scrolling
+          toggleActions: 'play none none none', // animation plays on scroll down, does nothing on scroll up
+          onLeaveBack: () => gsap.to(imageRef.current, { scale: 1 }), // reset scale when scrolling back
+        },
+      });
+  }, []);
+
   return (
     <div className="p-5 overflow-hidden">
       
-      <img src={imageUrl} alt={title} className="w-full h-auto object-cover" />
+      <img src={imageUrl} alt={title} ref={imageRef} className="w-full h-auto object-cover" />
  
       <div className="p-6">
         <h2 className="text-xl font-bold mb-2">{title}</h2>

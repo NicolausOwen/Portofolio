@@ -37,7 +37,7 @@ function Home() {
       <div className="font-sans sm:mx-[10vw] md:mx-[15vw] lg:mx-[25vw]">
 
         {/* HEADER*/}
-        <section className="my-[30vh] bg-white text-center p-8">
+        <section className="my-[20vh] bg-white text-center p-8">
           <h1 className="text-7xl font-bold mb-4">
             Welcome.
           </h1>
@@ -50,7 +50,7 @@ function Home() {
         </section>
 
         {/* EXPRERIENCE */}
-        <div className="mb-12">
+        <div className="mt-[30vh] mx-10">
           <h1 className="text-4xl font-bold">My Exprerience</h1>
           <p className="mt-4 text-gray-600">
             Description.
@@ -58,7 +58,7 @@ function Home() {
         </div>
 
         {/* Experience Section */}
-        <section>
+        <section className='m-10'>
           {/* Experience 1 */}
           <div className="mb-12">
 
@@ -73,7 +73,7 @@ function Home() {
             - Collaborated with cross-functional teams to curate and manage content displayed on the website.<br/>
             </p>
 
-            <div className="mt-4 flex space-x-2">
+            <div className="mt-4 flex flex-wrap gap-1">
               <span className="bg-gray-700 text-white py-1 px-3 rounded">Laravel</span>
               <span className="bg-gray-700 text-white py-1 px-3 rounded">PHP</span>
               <span className="bg-gray-700 text-white py-1 px-3 rounded">MySQL</span>
@@ -85,7 +85,7 @@ function Home() {
 
         {/* PROJECTS */}
         <div className="p-4" id='projects'>
-          <h1 className="text-5xl font-bold my-10">
+          <h1 className="text-5xl font-bold mx-5">
             My Works
           </h1>
           <div className="grid grid-cols-1 gap-6">
@@ -103,10 +103,10 @@ function Home() {
           </div>
         </div>
 
-        <p className="my-[20vh] p-4 font-normal">Loosely designed in <a className='hover:text-indigo-500 text-gray-500' href='https://www.canva.com'>Canva</a> & <a className='hover:text-red-500 text-gray-500' href='https://www.figma.com'>Figma</a> and coded in <a className='hover:text-blue-500 text-gray-500' href='https://code.visualstudio.com'>Visual Studio</a> Code by yours truly. Built with <a className='hover:text-blue-400 text-gray-500' href='https://react.dev'>React</a> and <a className='hover:text-blue-400 text-gray-500' href='https://tailwindcss.com'>Tailwind CSS</a>, deployed with <a className='hover:text-gray-900 text-gray-500' href='https://vercel.com'>Vercel</a>. All text is set in the Inter typeface.</p>
+        <p className="my-[5vh] p-4 font-normal">Loosely designed using <a className='hover:text-indigo-500 text-gray-500' href='https://www.canva.com'>Canva</a> & <a className='hover:text-red-500 text-gray-500' href='https://www.figma.com'>Figma</a> and coded in <a className='hover:text-blue-500 text-gray-500' href='https://code.visualstudio.com'>Visual Studio</a> Code by yours truly. Built with <a className='hover:text-blue-400 text-gray-500' href='https://react.dev'>React</a> and <a className='hover:text-blue-400 text-gray-500' href='https://tailwindcss.com'>Tailwind CSS</a>, deployed with <a className='hover:text-gray-900 text-gray-500' href='https://vercel.com'>Vercel</a>.</p>
 
         {/* CONTACTS */}
-        <div className="p-8 font-sans">
+        <div className="my-10 p-8 font-sans">
           <code className="text-2xl font-bold">How I can help you?</code>
           <p className="text-md mt-4 leading-relaxed">
             I'm a college student with experience in web development. I can assist
