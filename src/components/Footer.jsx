@@ -1,6 +1,18 @@
 import React from 'react';
 
 function Footer() {
+
+  const copyEmail = () => {
+    const email = 'picklelus@gmail.com'; 
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        alert('Email copied to clipboard!');
+      })
+      .catch((err) => {
+        console.error('Failed to copy: ', err);
+      });
+  };
+
   return (
     <footer className="text-gray-700 p-4">
       <div className="p-8 font-sans text-center">
@@ -12,10 +24,10 @@ function Footer() {
         Let’s connect if you’re looking to create a website, optimize your web app, or need assistance with development tasks.
       </p>
       <div className="flex justify-center items-center gap-4 mt-6">
-        <button className="text-[12px] lg:text-lg md:text-md px-6 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition">
+        <a href='/contact' className="text-[12px] lg:text-lg md:text-md px-6 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition">
           Open for Projects - Let’s Talk
-        </button>
-        <button className="text-[12px] lg:text-lg md:text-md px-6 py-2 bg-gray-100 border border-gray-300 font-medium rounded-full hover:bg-gray-200 transition">
+        </a>
+        <button onClick={copyEmail} className="text-[12px] lg:text-lg md:text-md px-6 py-2 bg-gray-100 border border-gray-300 font-medium rounded-full hover:bg-gray-200 transition">
           Copy Email
         </button>
       </div>

@@ -43,7 +43,7 @@ function Home() {
     const welcomeChars = welcomeText.split('');
     textRef.current.innerHTML = welcomeChars.map(char => `<span>${char}</span>`).join('');
 
-    // Welcome
+    // Welcome animation
     gsap.fromTo(textRef.current.children, {
       opacity: 0,
       y: 20,
@@ -59,7 +59,7 @@ function Home() {
     const descriptionChars = descriptionText.split('');
     descriptionRef.current.innerHTML = descriptionChars.map(char => `<span>${char}</span>`).join('');
 
-    // Description
+    // Description animation
     gsap.fromTo(descriptionRef.current.children, {
       opacity: 0,
       y: 20,
@@ -88,9 +88,9 @@ function Home() {
           <p ref={descriptionRef} className="text-gray-600 mb-6">
             My Name is Nicolaus Owen Marvell, I am a college student passionate about web development. I thrive on challenges and continuously improve my skills, aiming to become a professional web developer. Explore my projects to see my journey and progress. I hope to create something spectacular together!.
           </p>
-          <button className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800">
+          <a href='/contact' className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800">
             Open for Work - Let&apos;s Talk!
-          </button>
+          </a>
         </section>
 
         {/* EXPRERIENCE */}
